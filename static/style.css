@@ -1,0 +1,37 @@
+
+.introduction {
+    text-align: center;
+}
+#textInput {
+    border: none;
+    border-bottom: 1px solid #0d1e40;
+}
+.userText {
+    color: #291b4f;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: right;
+    line-height: normal;
+    margin-bottom: 1px;
+}
+.userText span {
+    background-color: #fcd42b;
+    border-radius: 2px;
+}
+
+.botText {
+    color: #291b4f;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: normal;
+    margin: 5px;
+}
+.botText span {
+    background-color: #ceeae6;
+    border-radius: 2px;
+}
+#buttonInput {
+    background-color: #291b4f;
+    margin-bottom: 25px;
+}

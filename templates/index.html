@@ -1,0 +1,63 @@
+
+<!-- This the front end of the the Bot
+The code belows defines the principal bot presentation
+ -->
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+    <title>Rachel</title>
+
+</head>
+<body>
+<h3 class="jumbotron text-center">Hi, I'm Rachel <br> A smart Chatbot and I will answer your inquiries about Cavendish University </h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <div class="border border-success" id="chatbox">
+                <p class="botText"><span>Hi!</span></p>
+            </div>
+            <div id="userInput">
+                <input class="form-control" id="textInput" name="msg" placeholder="Type Your Message Here" type="text">
+                <input class="btn btn-success form-control" id="buttonInput" type="submit" value="Send">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getResponse() {
+            let userText = $("#textInput").val();
+            let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            $.get("/get", {msg: userText}).done(function (data) {
+                var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+                $("#chatbox").append(botHtml);
+                document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            });
+        }
+
+        $("#textInput").keypress(function (e) {
+            //if enter key is pressed
+            if (e.which == 13) {
+                getResponse();
+            }
+        });
+        $("#buttonInput").click(function () {
+            getResponse();
+        });   
+    </script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jqueryjs"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js"></script>
+</div>
+</body>
+</html>

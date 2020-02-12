@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 englishBot = ChatBot("Chatterbot",
                      storage_adapter="chatterbot.storage.SQLStorageAdapter",
-                     database_uri='postgres://qypsqxybdpchcm:db85da014b5272a205530c236357c98cb6f422623a1aa81d4a747230f1589d57@ec2-35-172-85-250.compute-1.amazonaws.com:5432/d846gbk4k4cot0',
+                     database_uri='postgres://qlkujblnysripk:e659e674392cfe433b0da15bb102346b8620fb72b5c4562a1a8d7a1849fbd228@ec2-184-72-235-159.compute-1.amazonaws.com:5432/dcvk7t170hi327',
                      logic_adapters=[
                          {
                              'import_path': 'chatterbot.logic.BestMatch',

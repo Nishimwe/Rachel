@@ -1,9 +1,5 @@
-
-.introduction {
-    text-align: center;
-}
-.jumbotron{
-    background-color: #0d1e40;
+h3 .jumbotron .text-center{
+    background-color: #0d1e40 ;
     color: #ffffff;
 }
 #textInput {

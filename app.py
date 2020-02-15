@@ -24,14 +24,10 @@ englishBot = ChatBot("Chatterbot",
                          }])
 
 # training the bot for cavendish admission
-# trainer.train("chatterBot.corpus.english.greetings")
 
 trainer = ChatterBotCorpusTrainer(englishBot)
 
 trainer.train("./corpus/")
-
-# Now we can export the data to a file
-#trainer.export_for_training('./conversations/User_Bot_conversations.json')
 
 # define app routes
 
